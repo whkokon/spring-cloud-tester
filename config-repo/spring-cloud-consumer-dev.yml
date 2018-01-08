@@ -4,3 +4,5 @@ server:
 feign:
   hystrix:
     enabled: true
+yaloo:
+  test: i'm yaloo

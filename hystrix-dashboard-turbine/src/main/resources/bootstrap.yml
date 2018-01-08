@@ -16,6 +16,9 @@ spring:
         multiplier: 2
         maxInterval: 60000
         maxAttempts: 10
+    bus:
+      trace:
+        enabled: true
 
 eureka:
   client:

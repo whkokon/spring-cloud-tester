@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: spring-cloud-producer
+  #profiles:
+    #active: @activatedProperties@
+  cloud:
+    config:
+      profile: dev
+      label: develop
+      discovery:
+        enabled: true
+        serviceId: SPRING-CLOUD-CONFIG-SERVER
+      failFast: true
+      retry:
+        initialInterval: 10000
+        multiplier: 2
+        maxInterval: 60000
+        maxAttempts: 10
+    bus:
+      trace:
+        enabled: true
+
+
+eureka:
+  client:
+    serviceUrl:
+        defaultZone: http://peer1:8000/eureka/,http://peer2:8001/eureka/,http://peer3:8002/eureka/

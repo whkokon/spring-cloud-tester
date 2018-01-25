@@ -1,6 +1,3 @@
-server:
-  port: 7001
-
 turbine:
   appConfig: spring-cloud-consumer #配置Eureka中的serviceId列表，表明监控哪些服务
   aggregator:

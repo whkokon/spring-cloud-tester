@@ -1,0 +1,15 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: spring-clouid-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8000/eureka/,http://peer2:8001/eureka/,http://peer3:8002/eureka/
+  instance:
+    ip-address: true
+zuul:
+  ignoredServices: '*'
+  routes:
+    microservice-provider-user: /ecom/**

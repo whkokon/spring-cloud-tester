@@ -1,2 +1,6 @@
+eureka:
+  client:
+    serviceUrl:
+        defaultZone: http://peer1:8000/eureka/,http://peer2:8001/eureka/,http://peer3:8002/eureka/
 yaloo:
   test:  test yaloo's haha 1234567890

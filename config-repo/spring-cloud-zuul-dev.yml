@@ -12,8 +12,12 @@ zuul:
         maxSemaphores: 128
   routes:
     users:
-      path: /myusers/**
-      serviceId: spring-cloud-producer
+      path: /fullsearch/**
+      serviceId: appkms-search-solr
+  # 禁用spring自带的prefilter类
+  FormBodyWrapperFilter:
+    pre:
+      disable: true
 
 management:
   security:

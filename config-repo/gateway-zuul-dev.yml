@@ -1,0 +1,24 @@
+zuul:
+  ignoredServices: '*'
+  host:
+    # 适用于ApacheHttpClient，如果是okhttp无效。每个服务的http客户端连接池最大连接，默认是200.
+    maxTotalConnections: 1000
+    # 适用于ApacheHttpClient，如果是okhttp无效。每个route可用的最大连接数，默认值是20。
+    maxPerRouteConnections: 800
+  # 建议使用这种方式来设置，可以给每个不同的后端微服务设置不同的信号量
+  eureka:
+    spring-cloud-producer:
+      semaphore:
+        maxSemaphores: 128
+  routes:
+    users:
+      path: /fullsearch/**
+      serviceId: appkms-search-solr
+  # 禁用spring自带的prefilter类
+  FormBodyWrapperFilter:
+    pre:
+      disable: true
+
+management:
+  security:
+    enabled: false

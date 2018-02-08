@@ -1,8 +1,5 @@
-server:
-  port: 7001
-
 turbine:
-  appConfig: spring-cloud-consumer #配置Eureka中的serviceId列表，表明监控哪些服务
+  appConfig: gateway-zuul #配置Eureka中的serviceId列表，表明监控哪些服务
   aggregator:
     clusterConfig: default
   clusterNameExpression: new String("default")
